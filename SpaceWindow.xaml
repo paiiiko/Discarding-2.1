@@ -1,0 +1,30 @@
+﻿<Window x:Class="Discarding_2._1.SpaceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Discarding_2._1"
+        mc:Ignorable="d"
+        Title="Пространство Имён" Height="800"  Width="800" WindowStartupLocation="Manual" Left="0" Top="0"
+        Background="White">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <DataGrid Name="nameSpace"
+                  Grid.Row = "0" 
+                  RowHeight="20" 
+                  RowBackground="#ffffff" 
+                  AutoGenerateColumns="False"
+                  GridLinesVisibility="None"
+                  CanUserDeleteRows ="True">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Имена" Binding="{Binding Path=VarietyOfNames, UpdateSourceTrigger=PropertyChanged}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+
+</Window>

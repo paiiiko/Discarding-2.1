@@ -1,0 +1,94 @@
+﻿<Window x:Class="Discarding_2._1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Discarding_2._1"
+        mc:Ignorable="d"
+        Title="Discarding 2.0" WindowState="Maximized"
+        Background="White">
+
+    <Window.Resources>
+        <ControlTemplate TargetType="Button" x:Key="button">
+            <Border Name="border" Background="#dddddd" BorderThickness="0.6" BorderBrush="Black">
+                <ContentControl Content="{TemplateBinding Content}" 
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"/>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter TargetName="border" Property="Background" Value="#72bdd3"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="true">
+                    <Setter TargetName="border" Property="Background" Value="#3c5893"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.05*"/>
+            <RowDefinition Height="0.05*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.08*"/>
+            <ColumnDefinition Width="0.11*"/>
+            <ColumnDefinition Width="0.21*"/>
+            <ColumnDefinition Width="0.21*"/>
+            <ColumnDefinition Width="0.21*"/>
+            <ColumnDefinition Width="0.08*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button Name="back"  Content="Назад"                        Height="73" Click="Back_Click"  Grid.Row="0" Grid.RowSpan="2" VerticalAlignment="Bottom" Grid.Column="0" />
+        <Button Name="data"  Content="Пространство имён"            Height="73" Click="Data_Click"  Grid.Row="0" Grid.RowSpan="2" VerticalAlignment="Bottom" Grid.Column="2"/>
+        <Button Name="json"  Content="Добавить файл JSON"           Height="73" Click="Json_Click"  Grid.Row="0" Grid.RowSpan="2" VerticalAlignment="Bottom" Grid.Column="3"/>
+        <Button Name="first" Content="Первичная обработка"          Height="73" Click="First_Click" Grid.Row="0" Grid.RowSpan="2" VerticalAlignment="Bottom" Grid.Column="4"/>
+        <Button Name="save"  Content="Сохранить данные"             Height="36" Click="Save_Click"  Grid.Row="0" Grid.Column="1"  VerticalAlignment="Top" />
+        <Button Name="load"  Content="Загрузить сохранённые данные" Height="36" Click="Load_Click"  Grid.Row="1" Grid.Column="1"  VerticalAlignment="Bottom" />
+        <Button Name="merge" Content="Срастить ячейки"     Click="Merge_Click" Grid.Row="2" Grid.Column="0" Template="{StaticResource button}"/>
+        <Border Grid.Column="5" 
+                Grid.Row="0"
+                Grid.RowSpan="2"
+                BorderBrush="Black"
+                BorderThickness="0.8" 
+                Height="73" 
+                VerticalAlignment="Bottom">
+            <Border Background="White" 
+                    BorderBrush="#dddddd" 
+                    BorderThickness="6" >
+                <TextBlock FontSize="35" 
+                           FontWeight="Bold" 
+                           VerticalAlignment="Center" HorizontalAlignment="Right"
+                           Text="{Binding ElementName=content, Path=Items.Count, TargetNullValue=0, Mode=OneWay}" />
+            </Border>
+        </Border>
+
+        <DataGrid Name="content"
+                  LoadingRow="LoadingRow"
+                  VirtualizingStackPanel.VirtualizationMode="Standard"
+                  Grid.Row = "2"
+                  Grid.Column="1"
+                  Grid.ColumnSpan="6" 
+                  RowHeight="20" 
+                  RowBackground="#d3d3d3" 
+                  AlternatingRowBackground="#ffffff"
+                  SelectionMode="Extended"
+                  GridLinesVisibility="Vertical"
+                  AutoGenerateColumns="False"
+                  EnableRowVirtualization = "True" CanUserSortColumns="False">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID"            Binding="{Binding Path=Id}"        />
+                <DataGridTextColumn Header="Статья"        Binding="{Binding Path=VendorCode}"/>
+                <DataGridTextColumn Header="Позиция"       Binding="{Binding Path=Name}"      />
+                <DataGridTextColumn Header="Количество"    Binding="{Binding Path=Amount}"    />
+                <DataGridTextColumn Header="Ед. Измерения" Binding="{Binding Path=Units}"     />
+                <DataGridTextColumn Header="Комментарий"   Binding="{Binding Path=Comments}"  />
+                <DataGridTextColumn Header="Дата"          Binding="{Binding Path=Date}"      />
+                <DataGridTextColumn Header="Сотрудник"     Binding="{Binding Path=From}"      />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
