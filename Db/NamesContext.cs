@@ -7,7 +7,7 @@ namespace Discarding_2._1.Db
         public DbSet<Names> Names { get; set; } = null!;
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=..\\..\\..\\Db\\NamesList.db");
+            optionsBuilder.UseSqlite("Data Source=NamesList.db");
         }
     }
 }

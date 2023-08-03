@@ -8,8 +8,10 @@
     <UseWPF>true</UseWPF>
     <IsPublishable>True</IsPublishable>
     <PackageIcon>icon.png</PackageIcon>
-    <ApplicationIcon>icon.ico</ApplicationIcon>
     <UserSecretsId>a254d0f8-2647-40bb-87bc-7db0adb95a81</UserSecretsId>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <StartupObject></StartupObject>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

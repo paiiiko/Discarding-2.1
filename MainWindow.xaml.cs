@@ -129,7 +129,6 @@ namespace Discarding_2._1
             openFileDialog.ShowDialog();
             if (openFileDialog.FileNames.Length == 0) return;
 
-
             string data = File.ReadAllText(openFileDialog.FileName);
 
             chat = JsonSerializer.Deserialize<Message>(data);
@@ -148,6 +147,7 @@ namespace Discarding_2._1
 
             for (int i = 0; i < chat.Messages.Count; i++)
             {
+                vendorCode = null;
                 string[] message = chat.Messages[i].Text.Split('\n', StringSplitOptions.RemoveEmptyEntries);
                 for (int x = 0; x < message.Length; x++)
                 {
@@ -227,6 +227,7 @@ namespace Discarding_2._1
         }
         private void First_Click(object sender, RoutedEventArgs e)
         {
+            Position.positionsList.Sort();
             if (Position.positionsList == null) return;
             reservList = (List<Position>)Position.positionsList.Clone();
             for (int i = 0; i < Position.positionsList.Count - 1; i++)
@@ -403,7 +404,11 @@ namespace Discarding_2._1
                 {
                     WriteIndented = true
                 };
-                using (FileStream fs = new FileStream("..\\..\\..\\Db\\positions.json", FileMode.OpenOrCreate))
+                if (File.Exists("positions.json"))
+                {
+                    File.Delete("positions.json");
+                }
+                using (FileStream fs = new FileStream("positions.json", FileMode.OpenOrCreate))
                 {
                     JsonSerializer.Serialize(fs, Position.positionsList, options);
                     fs.Close();
@@ -418,7 +423,7 @@ namespace Discarding_2._1
         }
         private void Load_Click(object sender, EventArgs e)
         {
-            using (FileStream fs = new FileStream("..\\..\\..\\Db\\positions.json", FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream("positions.json", FileMode.OpenOrCreate))
             {
                 Position.positionsList = JsonSerializer.Deserialize<List<Position>>(fs);
                 fs.Close();
