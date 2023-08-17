@@ -5,7 +5,7 @@ VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Discarding 2.1", "Discarding 2.1.csproj", "{FC786D7F-3878-455E-8C64-B99BC3BA83A3}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupDiscarding2.1", "..\SetupDiscarding2.1\SetupDiscarding2.1.vdproj", "{668FA374-26BB-4B2D-8CB6-CC83BBB75411}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupDiskarding2.1", "..\SetupDiskarding2.1\SetupDiskarding2.1.vdproj", "{86D00F91-FEBC-4D82-AEFF-A5D66C883A8B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +17,8 @@ Global
 		{FC786D7F-3878-455E-8C64-B99BC3BA83A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC786D7F-3878-455E-8C64-B99BC3BA83A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC786D7F-3878-455E-8C64-B99BC3BA83A3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{668FA374-26BB-4B2D-8CB6-CC83BBB75411}.Debug|Any CPU.ActiveCfg = Debug
-		{668FA374-26BB-4B2D-8CB6-CC83BBB75411}.Release|Any CPU.ActiveCfg = Release
+		{86D00F91-FEBC-4D82-AEFF-A5D66C883A8B}.Debug|Any CPU.ActiveCfg = Debug
+		{86D00F91-FEBC-4D82-AEFF-A5D66C883A8B}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

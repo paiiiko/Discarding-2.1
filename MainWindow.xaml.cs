@@ -25,7 +25,7 @@ namespace Discarding_2._1
             InitializeComponent();
             db.Database.EnsureCreated();
             db.Names.Load();
-            DataContext = Position.positionsList;//db.Names.Local.ToObservableCollection();
+            DataContext = Position.positionsList;
             this.Closed += ClosingWindow;
         }
         private void LoadingRow(object sender, DataGridRowEventArgs e)
@@ -285,7 +285,6 @@ namespace Discarding_2._1
                 {
                     for (int j = i + 1; j < listPositions.Count; j++)
                     {
-                        //if (i == listPositions.Count) break;
                         if (listPositions[i].VendorCode == listPositions[j].VendorCode &&
                             listPositions[i].Units == listPositions[j].Units &&
                             listPositions[i].Comments == null &&
@@ -296,31 +295,11 @@ namespace Discarding_2._1
                             Position.positionsList.RemoveAt(index);
                             listPositions.RemoveAt(j);
                             j--;
-                            //if (j >= listPositions.Count) break;
-
                         }
                     }
-                    //if (i + 1 == listPositions.Count) break;
-                    //if (listPositions[i].VendorCode  == listPositions[i + 1].VendorCode &&
-                    //   listPositions[i].Units        == listPositions[i + 1].Units &&
-                    //   listPositions[i].Comments     == null &&
-                    //   listPositions[i + 1].Comments == null)
-                    //{
-                    //    listPositions[i].Amount += listPositions[i + 1].Amount;
-                    //    int index = positionsList.IndexOf(listPositions[i + 1]);
-                    //    positionsList.RemoveAt(index);
-                    //    listPositions.RemoveAt(i + 1);
-                    //    if (i + 1 == listPositions.Count) break;
-                    //    i--;
-                    //}
                 }
                 listIndex.Clear();
                 listPositions.Clear();
-                ////positionsList.Sort();
-                ////for (int i = 0; i < positionsList.Count; i++)
-                ////{
-                ////    positionsList[i].Id = i;
-                ////}
             }
             content.ItemsSource = Position.positionsList;
             content.Items.Refresh();

@@ -11,7 +11,7 @@
     <UserSecretsId>a254d0f8-2647-40bb-87bc-7db0adb95a81</UserSecretsId>
     <ApplicationIcon>icon.ico</ApplicationIcon>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <StartupObject></StartupObject>
+	<StartupObject>Discarding_2._1.EntryPoint</StartupObject>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

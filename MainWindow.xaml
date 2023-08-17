@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Discarding_2._1"
         mc:Ignorable="d"
-        Title="Discarding 2.0" WindowState="Maximized"
+        Title="Discarding 2.1" WindowState="Maximized"
         Background="White">
 
     <Window.Resources>
@@ -45,9 +45,9 @@
         <Button Name="data"  Content="Пространство имён"            Height="73" Click="Data_Click"  Grid.Row="0" Grid.RowSpan="2" VerticalAlignment="Bottom" Grid.Column="2"/>
         <Button Name="json"  Content="Добавить файл JSON"           Height="73" Click="Json_Click"  Grid.Row="0" Grid.RowSpan="2" VerticalAlignment="Bottom" Grid.Column="3"/>
         <Button Name="first" Content="Первичная обработка"          Height="73" Click="First_Click" Grid.Row="0" Grid.RowSpan="2" VerticalAlignment="Bottom" Grid.Column="4"/>
-        <Button Name="save"  Content="Сохранить данные"             Height="36" Click="Save_Click"  Grid.Row="0" Grid.Column="1"  VerticalAlignment="Top" />
-        <Button Name="load"  Content="Загрузить сохранённые данные" Height="36" Click="Load_Click"  Grid.Row="1" Grid.Column="1"  VerticalAlignment="Bottom" />
-        <Button Name="merge" Content="Срастить ячейки"     Click="Merge_Click" Grid.Row="2" Grid.Column="0" Template="{StaticResource button}"/>
+        <Button Name="save"  Content="Сохранить данные"             Height="36.5" Click="Save_Click"  Grid.Row="0" Grid.Column="1"  VerticalAlignment="Bottom" />
+        <Button Name="load"  Content="Загрузить сохранённые данные" Height="36.5" Click="Load_Click"  Grid.Row="1" Grid.Column="1"  VerticalAlignment="Bottom" />
+        <Button Name="merge" Content="Срастить ячейки"              Click="Merge_Click" Grid.Row="2" Grid.Column="0" Template="{StaticResource button}"/>
         <Border Grid.Column="5" 
                 Grid.Row="0"
                 Grid.RowSpan="2"
@@ -68,7 +68,7 @@
         <DataGrid Name="content"
                   LoadingRow="LoadingRow"
                   VirtualizingStackPanel.VirtualizationMode="Standard"
-                  Grid.Row = "2"
+                  Grid.Row = "3"
                   Grid.Column="1"
                   Grid.ColumnSpan="6" 
                   RowHeight="20" 
